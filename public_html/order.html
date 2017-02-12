@@ -1,0 +1,67 @@
+
+<md-dialog aria-label="Create Cinema Item">
+<form ng-cloak name="orderForm">
+   <md-toolbar>
+   <div class="md-toolbar-tools">
+      <h2>{{title}}</h2>
+      <span flex></span>
+      <md-button class="md-icon-button" ng-click="cancel()"> X </md-button>
+   </div>
+   </md-toolbar>
+   <md-dialog-content>
+   <div class="md-dialog-content" style="width: 50vw;">
+      <md-content  > 
+         <md-input-container class="md-block"> 
+            <label>Name</label>
+            <input ng-model="newOrder.name" type="text" required minlength="1" maxlength="512" > 
+               <div ng-messages="orderForm.newOrder.name.$error">
+                  <div ng-message="required">This is required!</div>
+               </div>
+         </md-input-container> 
+         <md-input-container class="md-block"> 
+            <label>Description</label> 
+            <input ng-model="newOrder.description" type="text" required minlength="1"> 
+               <div ng-messages="orderForm.newOrder.description.$error">
+                  <div ng-message="required">This is required!</div>
+               </div>
+         </md-input-container> 
+         <md-input-container class="md-block"> 
+            <label>Destination</label> 
+            <input ng-model="newOrder.destination" type="text" required minlength="1"  maxlength="512"> 
+               <div ng-messages="orderForm.newOrder.destination.$error">
+                  <div ng-message="required">This is required!</div>
+               </div>
+         </md-input-container> 
+         <md-input-container class="md-block"> 
+            <label>Weight</label> 
+            <input ng-model="newOrder.weight" type="text" required minlength="10" maxlength="64"> 
+               <div ng-messages="orderForm.newOrder.weight.$error">
+                  <div ng-message="required">This is required!</div>
+               </div>
+         </md-input-container> 
+          
+          <md-input-container class="md-block"> 
+            <label>Price</label> 
+            <input ng-model="newOrder.price" type="text" required minlength="10" maxlength="64"> 
+               <div ng-messages="orderForm.newOrder.price.$error">
+                  <div ng-message="required">This is required!</div>
+               </div>
+         </md-input-container> 
+      
+         <md-input-container class="md-block" > 
+            <label>Client</label> 
+            <md-select ng-model="newOrder.clientId" ng-required=true > 
+               <md-option ng-repeat="client in users" value="{{client.clientId}}">{{client.name}}</md-option> 
+            </md-select> 
+         </md-input-container> 
+      </md-content>
+   </div>
+   </md-dialog-content>
+   <md-dialog-actions layout="row">
+      <md-button ng-disabled="!orderForm.$valid" ng-click="create()" > {{btn}} </md-button> 
+      <md-button ng-click="remove()" > Delete </md-button> 
+   <span flex></span> 
+      <md-button ng-click="cancel()"> Cancel </md-button> 
+   </md-dialog-actions>
+</form>
+</md-dialog>

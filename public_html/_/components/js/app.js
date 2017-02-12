@@ -16,9 +16,7 @@ var omsApp = angular.module("OMS", ['ngMaterial','ngMessages'])
     console.log("Application has been started....!");
 });
 
-//            function themeController ($scope) {            
-//            }	
-// 
+//            function themeController ($scope) { }	
     
 //showDialog FACTORY for Globally use in application
 omsApp.service('showDialog', ['$mdDialog',function($mdDialog) {
@@ -47,11 +45,11 @@ omsApp.service('verifyDelete',['$mdDialog', function($mdDialog) {
 
         // Call the confirm() function to configure the confirmation dialog
         var confirm = $mdDialog.confirm()
-                      .title('Confirm Your Choice')
-                      .content('Are you sure you want to delete the record?')
-                      .ariaLabel( 'Delete Record')
-                      .ok('Delete Record')
-                      .cancel('Cancel');
+            .title('Confirm Your Choice')
+            .content('Are you sure you want to delete the record?')
+            .ariaLabel( 'Delete Record')
+            .ok('Delete Record')
+            .cancel('Cancel');
         return $mdDialog.show(confirm);
     }
 }])// verifyDelete
@@ -62,12 +60,12 @@ omsApp.service('toast', ['$mdToast',function($mdToast) {
     // Include a reference to message which like to display
     return function(toastMessage) {
         $mdToast.show(
-                $mdToast.simple()
-                .textContent(toastMessage)
-                .hideDelay(3000)
-                .highlightAction(true)
-                .highlightClass("md-warn")
-                .position('bottom right')
-                .capsule(true));
+            $mdToast.simple()
+            .textContent(toastMessage)
+            .hideDelay(3000)
+            .highlightAction(true)
+            .highlightClass("md-warn")
+            .position('bottom right')
+            .capsule(true));
     }
 }])// toast
