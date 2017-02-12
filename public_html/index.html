@@ -75,8 +75,8 @@
                <tr ng-repeat="record in filterData = (  orders | orderBy:sortType:sortReverse) ">
                <!--<tr ng-repeat="record in orders ">-->
                     <td>{{record.clientId}}</td>
-                    <td>{{record.price}}</td>
-                    <td>{{record.weight}}</td>
+                    <td>{{record.price| currency : "€" : 2}}</td>
+                    <td>{{record.weight| number : 3}} kg</td>
                     <td>{{record.createDate}}</td>
                     <td class="">
                         <button class="" ng-click="editOrDeleteOrder($event,record)" aria-label="action to run on order">
@@ -89,7 +89,7 @@
             <tfoot>
                 <tr>
                     <td>Total</td>
-                    <td>$23486</td>
+                    <td>{{total | currency : "€" : 2}}</td>
                     <td></td>
                     <td></td>
                     <td></td>

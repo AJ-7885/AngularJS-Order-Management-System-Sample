@@ -1,8 +1,8 @@
 /*! Author : AJ @MavajSunCo 12-FEB-2017 */
 
-omsApp.controller("omsCtl", ['$scope','$http','$mdDialog',
+omsApp.controller("omsCtl", ['$rootScope','$scope','$http','$mdDialog',
     'verifyDelete','toast','showDialog','omsFactory',
-    function ( $scope,$http,$mdDialog,verifyDelete, toast,
+    function ($rootScope,$scope,$http,$mdDialog,verifyDelete, toast,
             showDialog, omsFactory) {
                 
         $scope.sortType = 'clientId'; // set the default sort type
@@ -10,8 +10,8 @@ omsApp.controller("omsCtl", ['$scope','$http','$mdDialog',
 
         // Read order user and order list
         omsFactory.getAllUsers().then(function (respond) {
-            $scope.users = respond.data;
-            $scope.adminUser=$scope.users[0];
+            $rootScope.users = respond.data;
+            $scope.adminUser=$rootScope.users[0];
             // This is assumption of login user , 
             // because we do not have login Process , 
             // and count this as admin user to see all 
@@ -21,9 +21,12 @@ omsApp.controller("omsCtl", ['$scope','$http','$mdDialog',
                 // The ID need to be UUID from the backend,
                 // But I use integer to make simple task
                 $scope.orders = respond.data;
-
-                console.log($scope.users);
-                console.log($scope.orders);
+                $scope.total = 0;
+                angular.forEach($scope.orders, function(order, key) {
+                    console.log(order.price);
+                     $scope.total+=Number(order.price);
+                        console.log('total'+ $scope.total);
+                    });
             });
         });
         
@@ -31,13 +34,14 @@ omsApp.controller("omsCtl", ['$scope','$http','$mdDialog',
            
         // create order ----------------------- 
         $scope.createOrder = function($event) {
+  
             showDialog($event, $scope, 
             ['$scope', '$mdDialog', '$http', 'toast',
                 function($scope, $mdDialog, $http, toast) {
                 $scope.title = 'Create New Order';
                 $scope.btn = 'Create';
                 $scope.type = 'add';
-
+                
                 $scope.newOrder = {  
                     id: Math.round(Math.random()*100000000000) + 1,
                     name: '',
