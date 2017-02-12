@@ -8,6 +8,7 @@ omsApp.controller("omsCtl", ['$rootScope','$scope','$http','$mdDialog',
         $scope.sortType = 'clientId'; // set the default sort type
         $scope.sortReverse = false; // set the default sort order
 
+        var loadData=function(){
         // Read order user and order list
         omsFactory.getAllUsers().then(function (respond) {
             $rootScope.users = respond.data;
@@ -23,12 +24,11 @@ omsApp.controller("omsCtl", ['$rootScope','$scope','$http','$mdDialog',
                 $scope.orders = respond.data;
                 $scope.total = 0;
                 angular.forEach($scope.orders, function(order, key) {
-                    console.log(order.price);
-                     $scope.total+=Number(order.price);
-                        console.log('total'+ $scope.total);
+                     $scope.total+=Number(order.price);       
                     });
             });
         });
+    }();
         
         
            
@@ -36,8 +36,8 @@ omsApp.controller("omsCtl", ['$rootScope','$scope','$http','$mdDialog',
         $scope.createOrder = function($event) {
   
             showDialog($event, $scope, 
-            ['$scope', '$mdDialog', '$http', 'toast',
-                function($scope, $mdDialog, $http, toast) {
+            ['$rootScope','$scope', '$mdDialog', '$http', 'toast',
+                function($rootScope,$scope, $mdDialog, $http, toast) {
                 $scope.title = 'Create New Order';
                 $scope.btn = 'Create';
                 $scope.type = 'add';
@@ -56,9 +56,10 @@ omsApp.controller("omsCtl", ['$rootScope','$scope','$http','$mdDialog',
 
                 // create order by post API Call
                 $scope.create = function() {
-                    $http.post('URL______', $scope.newOrder)
+                    $http.post('http://localhost:3000/order', $scope.newOrder)
                          .success(function(data, status, headers, config) {
                             toast('The new order has been added!');
+                          
                             $mdDialog.cancel();
                     }); // $http
                 }; // .create
@@ -82,7 +83,7 @@ omsApp.controller("omsCtl", ['$rootScope','$scope','$http','$mdDialog',
 
                 // update order API Call
                 $scope.create = function() {
-                    $http.post('URL_____', $scope.newOrder)
+                    $http.put('http://localhost:3000/order/'+$scope.newOrder.id, $scope.newOrder)
                          .success(function(data, status, headers, config) {
                             toast('The order has been updated!');
                             $mdDialog.cancel();
@@ -101,7 +102,7 @@ omsApp.controller("omsCtl", ['$rootScope','$scope','$http','$mdDialog',
 
                     $mdDialog.show(confirm).then(function () {
                         $scope.status = 'Order has been removed successfully!';
-                        $http.post('URL______' + oldOrder.id)
+                        $http.delete('http://localhost:3000/order/' + oldOrder.id)
                                 .success(function (data, status, headers, config) {
                                     // tell the user item was deleted
                                     toast('Order has been removed!'); 
@@ -128,7 +129,7 @@ omsApp.controller("omsCtl", ['$rootScope','$scope','$http','$mdDialog',
 
                 // update User API Call
                 $scope.update = function() {
-                    $http.post('URL_____', $scope.newUser)
+                    $http.put('http://localhost:3000/user/'+$scope.newUser.id, $scope.newUser)
                          .success(function(data, status, headers, config) {
                             toast('The user has been updated!');
                             $mdDialog.cancel();

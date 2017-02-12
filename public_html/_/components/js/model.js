@@ -4,7 +4,8 @@ omsApp.factory('omsFactory', ['$http', function ($http) {
         var sdo = {
             getAllOrders: function () {
                 var promise = $http({
-                    url: '_/js/orders.json',
+//                    url: '_/js/orders.json',
+                    url: 'http://localhost:3000/order',
                     method: "GET"
                 });
                 promise.success(function (data, status, headers, conf) {
@@ -14,7 +15,8 @@ omsApp.factory('omsFactory', ['$http', function ($http) {
             },
               getAllUsers: function () {
                 var promise = $http({
-                    url: '_/js/users.json',
+                    url: 'http://localhost:3000/user',
+//                    url: '_/js/users.json',
                     method: "GET"
                 });
                 promise.success(function (data, status, headers, conf) {
