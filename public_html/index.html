@@ -74,16 +74,14 @@
             </thead>
 
             <tbody>
-
-                <tr >
-                    <td>sss</td>
-                    <td>sdddd</td>
-                    <td>ddddd</td>
-                    <td>ddddd</td>
-                    <!--          <td class="table-cell-centered">{{ record.locale}}</td> -->
-                    <!--         <td class="table-cell-centered">{{ record.enabled?"Y":"N";}}</td>-->
-                    <td class="cp-category-btn-holder">
-                        <button class="cp-category-btn-up" ng-click="" aria-label="action to run on order">
+               <!--<tr ng-repeat="record in filterData = (  orders | orderBy:sortType:sortReverse ">-->
+               <tr ng-repeat="record in orders ">
+                    <td>{{record.clientId}}</td>
+                    <td>{{record.price}}</td>
+                    <td>{{record.weight}}</td>
+                    <td>{{record.createDate}}</td>
+                    <td class="">
+                        <button class="" ng-click="" aria-label="action to run on order">
                             <i class="fa fa-cog" aria-hidden="true"></i>
                         </button>
 

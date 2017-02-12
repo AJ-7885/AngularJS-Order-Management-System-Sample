@@ -14,7 +14,7 @@ omsApp.factory('omsFactory', ['$http', function ($http) {
             },
               getAllUsers: function () {
                 var promise = $http({
-                    url: '_/js/User.json',
+                    url: '_/js/users.json',
                     method: "GET"
                 });
                 promise.success(function (data, status, headers, conf) {
