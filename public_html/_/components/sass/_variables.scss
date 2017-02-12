@@ -1,0 +1,58 @@
+/*! Author : AJ @MavajSunCo 12-FEB-2017 */
+
+// Colors
+//
+// Grayscale and brand colors
+
+$color-primary:             pink !default;;
+$color-blue:                #40a2d8;
+$color-bluelight:           #6ebadb !default;
+$color-skyblue:             #98bfe4 !default;
+$color-red:                 #e30613 !default;
+
+$color-dark:                #414141;
+$color-gray:                #a7a7a7;
+$color-dark-gray:           #333333;
+$color-light-gray:          #ccc;
+
+$color-white:               #FFFFFF;
+$color-black:               #000000;
+
+
+// Typography
+// Font, line-height, and color for body text, headings, and more.
+
+$font-family-primary:		'Roboto Condensed', sans-serif !default; // Default font family
+
+$line-height:                1.6 !default;
+
+// Grid breakpoints
+//
+// Define the minimum and maximum dimensions at which your layout will change,
+// adapting to different screen sizes, for use in media queries.
+
+$grid-breakpoints: (
+// Extra small screen / phone
+xs: 0,
+// Small screen / phone
+sm: 34em,
+// Medium screen / tablet
+md: 48em,
+// Large screen / desktop
+lg: 62em,
+// Extra large screen / wide desktop
+xl: 75em
+) !default;
+
+
+// Grid containers
+//
+// Define the maximum width of `.container` for different screen sizes.
+
+$container-max-widths: (
+sm: 34rem,    // 480
+md: 45rem,    // 720
+lg: 60rem,    // 960
+xl: 72.25rem  // 1140
+) !default;
+

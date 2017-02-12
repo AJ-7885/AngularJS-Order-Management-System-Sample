@@ -1,0 +1,48 @@
+/*! Author : AJ @MavajSunCo 12-FEB-2017 */
+
+#orderslist{  
+    margin: 20px 10px 20px 10px; 
+
+}
+
+.table-bordered {
+    font-size: 1.2rem !important;
+
+    thead{
+        background: pink;
+        border-radius: 5px 5px 0 0;
+        color: white;
+        a{
+            color: white;
+        }
+    }
+
+
+    tfoot {
+        background: pink;
+        border-radius: 0px 5px 5px 0px;
+        color: white;
+        a{
+            color: white;
+        }
+    }
+
+    table  th:nth-child(1){
+        border-radius: 5px 0px 0px 5px;
+    }
+    table  th:nth-last-child(1){
+        border-radius: 0px 5px 5px 0px;
+    }
+    tbody {
+        tr {
+            td {
+                padding: 2px;
+                font-size: 1.2rem !important;
+            }//td
+        }//tr
+    }//tbody
+}//table-bordered
+
+.table-cell-centered {
+    text-align: center;
+    width: 60px; }

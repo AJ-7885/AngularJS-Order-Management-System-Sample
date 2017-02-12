@@ -1,0 +1,48 @@
+[
+    {
+        "id": "1",
+        "name": "Mobile",
+        "weight": "0.500",
+        "description": "Mobile Samsung S7",
+        "price": "400.95",
+        "destination": "Berlin",
+        "qty": "",
+        "createDate": "25-12-2016",
+        "clientId": "1000"
+    },
+    {
+        "id": "2",
+        "name": "PC",
+        "weight": "3.00",
+        "description": "Lenovo T520",
+        "price": "900.00",
+        "destination": "Berlin",
+        "qty": "",
+        "createDate": "24-11-2016",
+        "clientId": "1000"
+    },
+    {
+        "id": "3",
+        "name": "Camera",
+        "weight": "1.500",
+        "description": "Sony Alpha 6000",
+        "price": "890.00",
+        "destination": "Usingen",
+        "qty": "",
+        "createDate": "20-10-2016",
+        "clientId": "1003"
+    }, 
+    {
+        "id": "4",
+        "name": "Mobile",
+        "weight": "0.500",
+        "description": "Mobile Samsung S7",
+        "price": "400.95",
+        "destination": "Berlin",
+        "qty": "",
+        "createDate": "11-12-2016",
+        "clientId": "1001"
+    }
+
+
+]
