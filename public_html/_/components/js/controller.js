@@ -5,6 +5,9 @@ omsApp.controller("omsCtl", ['$scope','$http','verifyDelete','toast',
      function ( $scope,$http,verifyDelete, toast,
             showDialog, omsFactory) {
                 
+        $scope.sortType = 'clientId'; // set the default sort type
+        $scope.sortReverse = false; // set the default sort order
+                
         omsFactory.getAllUsers().then(function (respond) {
             $scope.users = respond.data;
             omsFactory.getAllOrders().then(function (respond) {
@@ -16,4 +19,7 @@ omsApp.controller("omsCtl", ['$scope','$http','verifyDelete','toast',
                 console.log($scope.orders);
             });
         });
+        
+        
+        
     }]);
