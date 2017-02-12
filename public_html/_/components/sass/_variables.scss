@@ -4,9 +4,9 @@
 //
 // Grayscale and brand colors
 
-$color-primary:             pink !default;;
+$color-primary:             #E040FB!default;;
 $color-blue:                #40a2d8;
-$color-bluelight:           #6ebadb !default;
+$color-bluelight:           #29B6F6 !default;
 $color-skyblue:             #98bfe4 !default;
 $color-red:                 #e30613 !default;
 
@@ -17,7 +17,6 @@ $color-light-gray:          #ccc;
 
 $color-white:               #FFFFFF;
 $color-black:               #000000;
-
 
 // Typography
 // Font, line-height, and color for body text, headings, and more.
@@ -43,7 +42,6 @@ lg: 62em,
 // Extra large screen / wide desktop
 xl: 75em
 ) !default;
-
 
 // Grid containers
 //

@@ -6,10 +6,10 @@
       "weight": "0.500",
       "description": "Mobile Samsung S7",
       "price": "400.95",
-      "destination": "Berlin",
+      "destination": "Berlin .jhhh",
       "qty": "",
       "createDate": "25-12-2016",
-      "clientId": "1000"
+      "clientId": "1001"
     },
     {
       "id": "2",
@@ -103,7 +103,7 @@
   "user": [
     {
       "id": "1001",
-      "name": "User 01",
+      "name": "User 01zgg",
       "email": "user01@gmail.com",
       "phone": "2349872364",
       "address": "10100 berlin",

@@ -4,44 +4,63 @@
     margin: 20px 10px 20px 10px; 
 
 }
-
 .table-bordered {
     font-size: 1.2rem !important;
+    border: none;
+    border-radius:5px;
 
     thead{
-        background: pink;
-        border-radius: 5px 5px 0 0;
-        color: white;
-        a{
-            color: white;
+        border: none;
+        border-radius: 5px 5px 0px 0px;
+        th:nth-child(1){
+            border-radius: 5px 0px 0px 0px;
+            border: none;
+        }
+        th:nth-last-child(1){
+            border-radius: 0px 5px 0px 0px;
+            border: none;
         }
     }
 
-
+    th{
+        border: none;
+        background: $color-primary;
+        color: $color-white;
+        a{
+            color: $color-white;
+        }
+    }
     tfoot {
-        background: pink;
-        border-radius: 0px 5px 5px 0px;
-        color: white;
-        a{
-            color: white;
+        border: none;
+        border-radius: 0px 0px 5px 5px;
+        th:nth-child(1){
+            border-radius: 0px 0px 0px 5px;
+            border: none;
+        }
+        th:nth-last-child(1){
+            border-radius: 0px 0px 5px 0px;
+            border: none;
         }
     }
 
-    table  th:nth-child(1){
-        border-radius: 5px 0px 0px 5px;
+    tr:last-child  {
+        border-radius: 5px 5px 0px 0px;
+        border: none;
     }
-    table  th:nth-last-child(1){
-        border-radius: 0px 5px 5px 0px;
+    tr:last-child  {
+        border-radius: 0px 0px 5px 5px;
+        border: none;
     }
+
     tbody {
         tr {
             td {
                 padding: 2px;
                 font-size: 1.2rem !important;
-            }//td
-        }//tr
-    }//tbody
-}//table-bordered
+            }
+        }
+    }
+}
 
 .table-cell-centered {
     text-align: center;

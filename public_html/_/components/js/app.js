@@ -4,19 +4,10 @@
  * Build main & Global module
  * */
 
-var omsApp = angular.module("OMS", ['ngMaterial','ngMessages'])
-//        .controller('themeController', themeController)
-//            .config(function($mdThemingProvider) {
-//               $mdThemingProvider.theme('customTheme') 
-//                  .primaryPalette('pink')
-//                  .accentPalette('black')
-//                  .warnPalette('gray');
-//               })
-                       .run(function () {
+var omsApp = angular.module('OMS', ['ngMessages','ngMaterial'])
+                .run(function () {
     console.log("Application has been started....!");
-});
-
-//            function themeController ($scope) { }	
+});	
     
 //showDialog FACTORY for Globally use in application
 omsApp.service('showDialog', ['$mdDialog',function($mdDialog) {
@@ -53,7 +44,6 @@ omsApp.service('verifyDelete',['$mdDialog', function($mdDialog) {
         return $mdDialog.show(confirm);
     }
 }])// verifyDelete
-
 
 // toast FACTORY for Globally use in application
 omsApp.service('toast', ['$mdToast',function($mdToast) {
