@@ -1,6 +1,10 @@
 /*! Author : AJ @MavajSunCo 12-FEB-2017 */
 
-omsApp.controller("omsCtl", ['$scope', 'omsFactory', function ($scope, omsFactory) {
+omsApp.controller("omsCtl", ['$scope','$http','verifyDelete','toast',
+                             'showDialog','omsFactory',
+     function ( $scope,$http,verifyDelete, toast,
+            showDialog, omsFactory) {
+                
         omsFactory.getAllUsers().then(function (respond) {
             $scope.users = respond.data;
             omsFactory.getAllOrders().then(function (respond) {
@@ -12,5 +16,4 @@ omsApp.controller("omsCtl", ['$scope', 'omsFactory', function ($scope, omsFactor
                 console.log($scope.orders);
             });
         });
-    }
-]);
+    }]);
