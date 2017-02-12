@@ -14,9 +14,9 @@
         <div class="md-media-sm card-media layout-row">
             <span><i class="fa fa-bars" aria-hidden="true"></i></span>
             <span>The Product</span>
-            <span class="card-media "><img src="_/img/user-profile-dummy-img.png" width="25"/></span>
-            <span>User name</span>
-            <span><i class="fa fa-sign-out" aria-hidden="true"></i></span>
+            <span ng-click="editUser($event,adminUser)" class="card-media "><img src="_/img/user-profile-dummy-img.png" width="25"/></span>
+            <span ng-click="editUser($event,adminUser)" >{{adminUser.name}}</span>
+            <span ng-click="logout($event)"><i class="fa fa-sign-out" aria-hidden="true"></i></span>
         </div>
     </md-toolbar>
 

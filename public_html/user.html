@@ -1,0 +1,61 @@
+
+<md-dialog aria-label="Create or Edit User">
+    <form ng-cloak name="userForm">
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2>{{title}}</h2>
+                <span flex></span>
+                <md-button class="md-icon-button" ng-click="cancel()"> X </md-button>
+            </div>
+        </md-toolbar>
+        <md-dialog-content>
+            <div class="md-dialog-content" style="width: 50vw;">
+                <md-content  > 
+                    <md-input-container class="md-block"> 
+                        <label>ID</label>
+                        <input ng-model="newUser.id" type="text" readonly > 
+                    </md-input-container> 
+                    <md-input-container class="md-block"> 
+                        <label>Name</label>
+                        <input ng-model="newUser.name" type="text" required minlength="1" maxlength="512" > 
+                        <div ng-messages="userForm.newUser.name.$error">
+                            <div ng-message="required">This is required!</div>
+                        </div>
+                    </md-input-container> 
+                    <md-input-container class="md-block"> 
+                        <label>Email</label> 
+                        <input ng-model="newUser.email" type="email" required minlength="1"> 
+                        <div ng-messages="userForm.newUser.email.$error">
+                            <div ng-message="required">This is required!</div>
+                        </div>
+                    </md-input-container> 
+                    <md-input-container class="md-block"> 
+                        <label>Phone</label> 
+                        <input ng-model="newUser.phone" type="tel" required minlength="1"  maxlength="512"> 
+                        <div ng-messages="userForm.phone.destination.$error">
+                            <div ng-message="required">This is required!</div>
+                        </div>
+                    </md-input-container> 
+                    <md-input-container class="md-block"> 
+                        <label>Address</label> 
+                        <input ng-model="newUser.address" type="text" required minlength="1" maxlength="512"> 
+                        <div ng-messages="userForm.newUser.address.$error">
+                            <div ng-message="required">This is required!</div>
+                        </div>
+                    </md-input-container> 
+
+<!--                    <md-input-container class="md-block"> 
+                        <label>Picture</label> 
+                        <input ng-model="newUser.picture" type="image" > 
+                    </md-input-container> -->
+
+                </md-content>
+            </div>
+        </md-dialog-content>
+        <md-dialog-actions layout="row">
+            <md-button ng-disabled="!userForm.$valid" ng-click="update()" > Update </md-button> 
+            <span flex></span> 
+            <md-button ng-click="cancel()"> Cancel </md-button> 
+        </md-dialog-actions>
+    </form>
+</md-dialog>
