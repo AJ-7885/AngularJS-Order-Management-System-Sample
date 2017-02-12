@@ -5,11 +5,13 @@ Application has been make to sample Order Management System with Angular JS 1.5 
 
 #full fake REST API ( Dev Environment)
 
-First install Install
+First Install
 
 ```bash
 $ npm install -g json-server
 ```
+Then run the json-server 
+
 ```bash
 $ json-server --watch db.json
 ```
