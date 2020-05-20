@@ -1,4 +1,4 @@
-/*! Author : AJ @MavajSunCo 12-FEB-2017 */
+/*! Author : https://github.com/AJ-7885 12-FEB-2017 */
 
 omsApp.controller("omsCtl", ['$rootScope','$scope','$http','$mdDialog',
     'verifyDelete','toast','showDialog','omsFactory',

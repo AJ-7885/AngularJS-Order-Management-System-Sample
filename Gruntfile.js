@@ -1,4 +1,4 @@
-/* Author : AJ @MavajSunCo 12-FEB-2017 */
+/* Author : @AJ-7885 12-FEB-2017 */
 module.exports = function (grunt) {
     // Project configuration.
     grunt.initConfig({

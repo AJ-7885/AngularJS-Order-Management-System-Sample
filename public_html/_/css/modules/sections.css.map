@@ -1,7 +1,0 @@
-{
-"version": 3,
-"mappings": "AAAA,0CAA0C,AAG1C,YAAY,CACT,MAAM,CAAE,cAAc,CACtB,MAAM,CAAE,mBAAmB,CAC3B,OAAO,CAAE,IAAI,CACb,UAAU,CAAE,IAAI,CAChB,aAAa,CAAE,GAAG,CAClB,UAAU,CAAE,KAAK,CACjB,uBAAU,CACN,gBAAgB,CAAG,OAAO,CAC1B,OAAO,CAAE,IAAI",
-"sources": ["../../components/sass/modules/sections.scss"],
-"names": [],
-"file": "sections.css"
-}
