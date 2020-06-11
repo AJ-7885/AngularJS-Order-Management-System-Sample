@@ -6,7 +6,7 @@
         <title>Order Management System sample</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="_/css/style.css" rel="stylesheet" type="text/css"/>
+        <link href="style.css" rel="stylesheet" type="text/css"/>
     </head>
     <body ng-controller="omsCtl">
 
@@ -15,7 +15,7 @@
             <div>The Product</div>
             <div flex="" class="flex"></div>
             <div ng-click="editUser($event,adminUser)" class="card-media pull-right ">
-                <img src="_/img/user-profile-dummy-img.png" width="48" class="img-circle"/>
+                <img src="user-profile-dummy-img.png" width="48" class="img-circle"/>
             </div>
             <div ng-click="editUser($event,adminUser)" >{{adminUser.name}}</div>
             <div ng-click="logout($event)"><i class="fa fa-sign-out" aria-hidden="true"></i></div>
@@ -113,6 +113,6 @@
 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.9/angular-messages.min.js"></script>
 <!-- Angular Material Library -->
 <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
-<script src="_/js/app.js" type="text/javascript"></script>
+<script src="app.js" type="text/javascript"></script>
 </body>
 </html>
